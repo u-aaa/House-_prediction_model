@@ -12,6 +12,11 @@ with open('models/regressor.pkl', 'rb') as f:
 
 
 def __process_input(posted_data) -> np.array:
+    '''
+    transforms JSON type data acquired from request and transforms it into 2D array the model understands
+    :param posted_data:
+    :return:np.array
+    '''
     try:
         data_str = json.loads(posted_data)
         data_list = data_str['features']
@@ -36,6 +41,10 @@ def index() -> str:
 
 @app.route('/predict', methods=['POST'])
 def predict() -> (str, int):
+    '''
+    loads the data acquired from request to the model and returns the predicted value
+    :return: prediction
+    '''
     try:
         data_str = request.data
         predict_params = __process_input(data_str)
