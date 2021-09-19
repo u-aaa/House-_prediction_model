@@ -10,7 +10,7 @@ The predict endpoint takes only POST requests and request made to the endpoint s
 as part of the request data. The endpoint can predict up to 2 prices per request.
 
 ## Usage
-Post request should e made using a list with 13 numbers. 2 lists can also be passed into the request.
+Post request should be made using a list with 13 numbers. 2 lists can also be passed into the request.
 
 ```python
 import json
